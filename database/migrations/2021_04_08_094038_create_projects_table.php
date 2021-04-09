@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('description');
             $table->double('price');
             $table->string('tasks_done');
-            $table->timestamp('start_date')->useCurrent();
+            $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
             $table->timestamps();
         });
