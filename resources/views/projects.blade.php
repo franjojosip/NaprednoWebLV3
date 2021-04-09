@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <td style="text-align:center">Project Name</td>
+                            <td style="text-align:center">Role</td>
                             <td style="text-align:center">Action</td>
                         </tr>
                     </thead>
@@ -31,7 +32,13 @@
                         @foreach($projects as $project)
                         <tr>
                             <td style="text-align:center">{{$project->name}}</td>
-
+                            <td style="text-align:center">
+                                @if($project->isOwner)
+                                    Owner
+                                @else
+                                    Member
+                                @endif
+                            </td>
                             <td style="text-align:center">
                                 <a class="btn btn-small btn-info" href="{{ url('projects/update/' . $project->id) }}">Edit</a>
                                 @if($project['isOwner'])
