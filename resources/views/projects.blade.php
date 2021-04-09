@@ -11,7 +11,7 @@
     {{session('danger')}}
 </div>
 @endif
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -23,12 +23,6 @@
                     <thead>
                         <tr>
                             <td style="text-align:center">Project Name</td>
-                            <td style="text-align:center">Project Description</td>
-                            <td style="text-align:center">Tasks Done</td>
-                            <td style="text-align:center">Project Price</td>
-                            <td style="text-align:center">Start Date</td>
-                            <td style="text-align:center">End Date</td>
-                            <td style="text-align:center">Project Members</td>
                             <td style="text-align:center">Action</td>
                         </tr>
                     </thead>
@@ -37,12 +31,6 @@
                         @foreach($projects as $project)
                         <tr>
                             <td style="text-align:center">{{$project->name}}</td>
-                            <td style="text-align:center">{{$project->description}}</td>
-                            <td style="text-align:center">{{$project->tasks_done}}</td>
-                            <td style="text-align:center">{{$project->price}}</td>
-                            <td style="text-align:center">{{date('d-m-Y', strtotime($project->start_date))}}</td>
-                            <td style="text-align:center">{{date('d-m-Y', strtotime($project->end_date))}}</td>
-                            <td style="text-align:center">{{$project->collaborators}}</td>
 
                             <td style="text-align:center">
                                 <a class="btn btn-small btn-info" href="{{ url('projects/update/' . $project->id) }}">Edit</a>
